@@ -7,7 +7,7 @@ def fib(max):
         print(b)
         a, b = b, a + b
         n = n + 1
-    return 'done'
+    print('done')
 
 
 def fib_generator(max):
@@ -20,17 +20,22 @@ def fib_generator(max):
 
 
 if __name__ == '__main__':
+    # [ means list
     L = [x * x for x in range(10)]
+    print(type(L))
     print(L)
 
+    # ( means generator
     g = (x * x for x in range(10))
     print(type(g))
     for i in range(10):
-        print(next(g))
+        print(next(g), end=',')
+    print()
 
     g = (x * x for x in range(10))
     for i in g:
-        print(i)
+        print(i, end=',')
+    print()
 
     print('*' * 20)
     fib(10)
