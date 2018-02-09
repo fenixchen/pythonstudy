@@ -15,7 +15,7 @@ def log(func):
 
 def log2(prompt):
     def decorator(func):
-        @functools.wraps(func)
+        @functools.wraps(func) #keep name same
         def wrapper(*args, **kw):
             print('>>before %s %s' % (prompt, func.__name__))
             ret = func(*args, **kw)
