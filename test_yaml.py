@@ -3,8 +3,11 @@
 import yaml
 
 
-def test(document):
-    print("**" * 50)
+def test(document, header=None):
+    if header is None:
+        print("**" * 50)
+    else:
+        print('<<' + header + '>>' + '**' * 50)
     print(document)
     print("--" * 50)
     load = yaml.load(document)
@@ -29,7 +32,7 @@ if __name__ == '__main__':
           sp: 0
           level: 2    
     """
-    test(doc)
+    test(doc, 'dict')
 
     # list
     doc = """    
@@ -37,7 +40,7 @@ if __name__ == '__main__':
     - Internet
     - Education
     """
-    test(doc)
+    test(doc, 'list')
 
     # dict + list
     doc = """
@@ -47,7 +50,7 @@ if __name__ == '__main__':
         - red: True
     
     """
-    test(doc)
+    test(doc, 'dict + list')
 
     # list of list
     doc = """
@@ -63,7 +66,7 @@ if __name__ == '__main__':
       - GNU Hurd
       - Linux  
     """
-    test(doc)
+    test(doc, 'list + list')
 
     # dict
     doc = """
