@@ -1,0 +1,12 @@
+# -*- coding:utf-8 -*-
+
+from tkinter import *
+
+root = Tk()
+
+Label(root, text="Red Sun", bg="red", fg="white").pack()
+Label(root, text="Green Grass", bg="green", fg="black").pack(ipadx=10, ipady=10)
+Label(root, text="Blue Sky", bg="blue", fg="white").pack(fill=X,
+                                                         padx=10, pady=10)
+
+mainloop()
