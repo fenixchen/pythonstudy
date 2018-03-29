@@ -10,7 +10,6 @@ class App(object):
         self.tree = ttk.Treeview(frame)
         ysb = ttk.Scrollbar(frame, orient='vertical', command=self.tree.yview)
         xsb = ttk.Scrollbar(frame, orient='horizontal', command=self.tree.xview)
-
         self.tree.configure(yscroll=ysb.set, xscroll=xsb.set)
         self.tree.heading('#0', text='Project tree', anchor='w')
 
@@ -40,7 +39,5 @@ class App(object):
 
 if __name__ == '__main__':
     root = tk.Tk()
-    root.grid_rowconfigure(0, weight=1)
-    root.grid_columnconfigure(0, weight=1)
     app = App(root, path='e:/')
     root.mainloop()
